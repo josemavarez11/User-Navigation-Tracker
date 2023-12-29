@@ -29,7 +29,7 @@ User Navigation Tracker
         import './utils/tracker.ts'
 
         [screenshot example]
-        <img src="./img/sc_import.png width="70px" height="40px" alt="screenshot import"/>
+        <img src="./img/sc_import.png" width="70px" height="40px" alt="screenshot import"/>
 
 
 ¿How to Use the Project?
@@ -47,7 +47,7 @@ User Navigation Tracker
 
     Once the environment is correctly configured, the data will arrive at the endpoint encrypted as follows:
 
-    <img src="./img/sc_data.png width="70px" height="40px" alt="screenshot data"/>
+    <img src="./img/sc_data.png" width="70px" height="40px" alt="screenshot data"/>
 
 
 
