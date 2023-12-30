@@ -1,4 +1,3 @@
-```diff
 # **User Navigation Tracker**
 
 User Navigation Tracker has a vanilla JavaScript and TypeScript version. It is able to captures and transmits user visit data to a specified endpoint. The use of TypeScript enhances compatibility with popular JavaScript frameworks like React or Angular, offering a versatile solution for diverse web development environments. The lightweight vanilla JavaScript core ensures efficient execution, while CryptoJS provides secure data encryption for heightened privacy and reliability in tracking user interactions.
@@ -49,10 +48,6 @@ It is necessary to create the following environment variables in the project whe
 
 
 **TRACKER_ENDPOINT**= [Endpoint of your backend server that will receive the tracking data].
-    Note: The backend server must have configured a route ready to receive a POST request and decrypt the received data. It must also be configured to parse the data to string. In the case of Node.js this would be:
-
-
-        app.use(text({ type: '*/*' }))
 
 
 **TRACKER_ENCRYPTION_KEY**= [Encryption key to encrypt the data with the crypto-js library].
@@ -65,6 +60,15 @@ It is necessary to create the following environment variables in the project whe
 
 
 <image src="./img/sc_data.png" align="center" width="1020px" height="320px" alt="screenshot data"/>
+
+
+## Backend Configuration
+
+The backend server must have configured a route ready to receive a POST request and decrypt the received data. It must also be configured to parse the data to string. 
+In the case of Node.js this would be:
+
+
+    app.use(text({ type: '*/*' }))
 
 
 **make sure to install the dependencies types/node
