@@ -37,7 +37,7 @@ User Navigation Tracker has a vanilla JavaScript and TypeScript version. It is a
     import './utils/tracker.ts'
 
 
-  <image src="./img/sc_import.png" align="center" width="800px" height="400px" alt="screenshot import"/>
+  <image src="./img/sc_import.png" align="center" width="900px" height="400px" alt="screenshot import"/>
 
 
 
