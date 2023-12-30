@@ -23,15 +23,15 @@ User Navigation Tracker has a vanilla JavaScript and TypeScript version. It is a
        <script src="/utils/tracker.js" alt="">
 
 
-  Remember to adjust the path in the script tag to the exact path where you have placed your tracker file.
+  *Remember to adjust the path in the script tag to the exact path where you have placed your tracker file.*
 
 ### **For the typescript version:**
 
 #### 4. Import the tracker file into the file containing your main application.
 
-  For example, the implementation of the tracker in a React project created with create-react-app would be as follows:
+  *For example, the implementation of the tracker in a React project created with create-react-app would be as follows:*
 
-  In the index.js file import the tracker.js file:
+  *In the index.js file import the tracker.js file:*
 
 
     import './utils/tracker.ts'
@@ -59,7 +59,7 @@ It is necessary to create the following environment variables in the project whe
 **TRACKER_INITIALIZATION_VECTOR**= [Initialization vector for encryption].
 
 
-Once the environment is correctly configured, the data will arrive at the endpoint encrypted as follows:
+### Once the environment is correctly configured, the data will arrive at the endpoint encrypted as follows:
 
 
 <image src="./img/sc_data.png" align="center" width="1020px" height="320px" alt="screenshot data"/>
