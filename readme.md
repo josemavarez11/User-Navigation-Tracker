@@ -56,7 +56,7 @@ It is necessary to create the following environment variables in the project whe
 **TRACKER_INITIALIZATION_VECTOR**= [Initialization vector for encryption].
 
 
-### Once the environment is correctly configured, the data will arrive at the endpoint encrypted as follows:
+#### Once the environment is correctly configured, the data will arrive at the endpoint encrypted as follows:
 
 
 <image src="./img/sc_data.png" align="center" width="1020px" height="320px" alt="screenshot data"/>
