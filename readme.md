@@ -23,7 +23,8 @@ User Navigation Tracker has a vanilla JavaScript and TypeScript version. It is a
        <script src="/utils/tracker.js" alt="">
 
 
-  *Remember to adjust the path in the script tag to the exact path where you have placed your tracker file.*
+> [!IMPORTANT]
+> Remember to adjust the path in the script tag to the exact path where you have placed your tracker file.
 
 ### **For the typescript version:**
 
