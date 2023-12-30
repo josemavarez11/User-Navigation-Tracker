@@ -71,4 +71,8 @@ In the case of Node.js this would be:
     app.use(text({ type: '*/*' }))
 
 
-**make sure to install the dependencies types/node
+> [!NOTE]
+> Make sure to install the necessary typescript dependencies for node.js typing.
+
+    npm i -D user-agent-data-types
+    npm i -D @types/node
