@@ -81,3 +81,9 @@ In the case of Node.js this would be:
 Once you decrypt the data in the backend using the same encryption key used in the respective environment variable, the data object you will get will look like this:
 
 <image src="./img/sc_object.png" align="center" width="500px" height="220px" alt="screenshot object"/>
+
+Where:
+
+- **visitTime** represents the time the user remained on the page until the time he/she closed, switched tabs or minimized the page
+- **url** represents the exact url address where the user browsed for the given time.
+- **deviceType** represents the type of device used by the user browsing the site.
