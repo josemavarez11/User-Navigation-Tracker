@@ -44,7 +44,7 @@ User Navigation Tracker has a vanilla JavaScript and TypeScript version. It is a
 
 
 
-## ¿How to Use the Project?
+## ¿How to Use the Tracker?
 
 It is necessary to create the following environment variables in the project where the tracker will be implemented:
 
