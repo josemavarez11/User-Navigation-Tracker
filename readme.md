@@ -30,9 +30,9 @@ User Navigation Tracker has a vanilla JavaScript and TypeScript version. It is a
 
 #### 4. Import the tracker file into the file containing your main application.
 
-  *For example, the implementation of the tracker in a React project created with create-react-app would be as follows:*
+  For example, the implementation of the tracker in a React project created with CRA would be as follows:
 
-  *In the index.js file import the tracker.js file:*
+  In the index.js file import the tracker.js file:
 
 
     import './utils/tracker.ts'
