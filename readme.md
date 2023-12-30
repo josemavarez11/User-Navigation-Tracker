@@ -59,7 +59,7 @@ It is necessary to create the following environment variables in the project whe
 #### Once the environment is correctly configured, the data will arrive at the endpoint encrypted as follows:
 
 
-<image src="./img/sc_data.png" align="center" width="1020px" height="320px" alt="screenshot data"/>
+<image src="./img/sc_data.png" align="center" width="1000px" height="290px" alt="screenshot data"/>
 
 
 ## Backend Configuration
@@ -76,3 +76,14 @@ In the case of Node.js this would be:
 
     npm i -D user-agent-data-types
     npm i -D @types/node
+
+
+Once you decrypt the data in the backend using the same encryption key used in the respective environment variable, the data object you will get will look like this:
+
+<image src="./img/sc_object.png" align="center" width="500px" height="220px" alt="screenshot object"/>
+
+Where:
+
+- **visitTime** represents the time the user remained on the page until the time he/she closed, switched tabs or minimized the page
+- **url** represents the exact url address where the user browsed for the given time.
+- **deviceType** represents the type of device used by the user browsing the site.
