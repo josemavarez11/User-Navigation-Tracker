@@ -1,4 +1,4 @@
-# User Navigation Tracker
+# **User Navigation Tracker**
 
 User Navigation Tracker has a vanilla JavaScript and TypeScript version. It is able to captures and transmits user visit data to a specified endpoint. The use of TypeScript enhances compatibility with popular JavaScript frameworks like React or Angular, offering a versatile solution for diverse web development environments. The lightweight vanilla JavaScript core ensures efficient execution, while CryptoJS provides secure data encryption for heightened privacy and reliability in tracking user interactions.
 
@@ -29,7 +29,7 @@ For the typescript version:
 
     import './utils/tracker.ts'
 
-  <image src="./img/sc_import.png" width="700px" height="400px" alt="screenshot import"/>
+  <image src="./img/sc_import.png" align="center" width="800px" height="400px" alt="screenshot import"/>
 
 
 ## ¿How to Use the Project?
@@ -46,6 +46,6 @@ It is necessary to create the following environment variables in the project whe
 **TRACKER_INITIALIZATION_VECTOR**= [Initialization vector for encryption].
 Once the environment is correctly configured, the data will arrive at the endpoint encrypted as follows:
 
-<image src="./img/sc_data.png" width="1020px" height="320px" alt="screenshot data"/>
+<image src="./img/sc_data.png" align="center" width="1020px" height="320px" alt="screenshot data"/>
 
 **make sure to install the dependencies types/node
