@@ -1,8 +1,8 @@
-## User Navigation Tracker
+# User Navigation Tracker
 
 User Navigation Tracker has a vanilla JavaScript and TypeScript version. It is able to captures and transmits user visit data to a specified endpoint. The use of TypeScript enhances compatibility with popular JavaScript frameworks like React or Angular, offering a versatile solution for diverse web development environments. The lightweight vanilla JavaScript core ensures efficient execution, while CryptoJS provides secure data encryption for heightened privacy and reliability in tracking user interactions.
 
-#### ¿How to install and run the Tracker?
+## ¿How to install and run the Tracker?
 
 1. Choose the version of the tracker you want to use.
 
@@ -32,7 +32,7 @@ For the typescript version:
     <image src="./img/sc_import.png" width="70px" height="40px" alt="screenshot import"/>
 
 
-#### ¿How to Use the Project?
+## ¿How to Use the Project?
 
 It is necessary to create the following environment variables in the project where the tracker will be implemented:
 
