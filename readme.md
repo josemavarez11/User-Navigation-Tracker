@@ -13,9 +13,9 @@ User Navigation Tracker has a vanilla JavaScript and TypeScript version. It is a
      npm i crypto-js
 
 
-#### **3. Include the files inside the js-version folder in the utils folder of your project.**
-
 ### **For the javascript version:** 
+
+#### **3. Include the files inside the js-version folder in the utils folder of your project.**
 
 #### 4. Insert the following tag in the head section of the html pages where you want the tracker to act:
 
@@ -27,6 +27,8 @@ User Navigation Tracker has a vanilla JavaScript and TypeScript version. It is a
 > Remember to adjust the path in the script tag to the exact path where you have placed your tracker file.
 
 ### **For the typescript version:**
+
+#### **3. Include the files inside the ts-version folder in the utils folder of your project.**
 
 #### 4. Import the tracker file into the file containing your main application.
 
