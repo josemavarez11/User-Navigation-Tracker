@@ -25,11 +25,11 @@ For the typescript version:
 **4. Import the tracker file into the file containing your main application.**
     For example, the implementation of the tracker in a React project created with create-react-app would be as follows:
 
-    In the index.js file import the tracker.js file:
+  In the index.js file import the tracker.js file:
 
     import './utils/tracker.ts'
 
-    <image src="./img/sc_import.png" width="70px" height="40px" alt="screenshot import"/>
+  <image src="./img/sc_import.png" width="700px" height="400px" alt="screenshot import"/>
 
 
 ## ¿How to Use the Project?
@@ -46,6 +46,6 @@ It is necessary to create the following environment variables in the project whe
 **TRACKER_INITIALIZATION_VECTOR**= [Initialization vector for encryption].
 Once the environment is correctly configured, the data will arrive at the endpoint encrypted as follows:
 
-<image src="./img/sc_data.png" width="70px" height="40px" alt="screenshot data"/>
+<image src="./img/sc_data.png" width="700px" height="400px" alt="screenshot data"/>
 
 **make sure to install the dependencies types/node
