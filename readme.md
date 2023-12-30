@@ -76,3 +76,8 @@ In the case of Node.js this would be:
 
     npm i -D user-agent-data-types
     npm i -D @types/node
+
+
+Once you decrypt the data in the backend using the same encryption key used in the respective environment variable, the data object you will get will look like this:
+
+<image src="./img/sc_object.png" align="center" width="600px" height="320px" alt="screenshot object"/>
