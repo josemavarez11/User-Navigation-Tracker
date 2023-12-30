@@ -5,7 +5,7 @@ User Navigation Tracker has a vanilla JavaScript and TypeScript version. It is a
 
 ## ¿How to install and run the Tracker?
 
-#### **1. Choose the version of the tracker you want to use.**
+#### **1. Choose the version of the tracker you want to use *(javascript or typescript)*.**
 
 #### **2. Install the crypto-js library:**
 
