@@ -40,7 +40,7 @@ User Navigation Tracker has a vanilla JavaScript and TypeScript version. It is a
     import './utils/tracker.ts'
 
 
-  <image src="./img/sc_import.png" align="center" width="900px" height="400px" alt="screenshot import"/>
+  <image src="./img/sc_import.png" align="center" width="700px" height="200px" alt="screenshot import"/>
 
 
 
@@ -82,7 +82,7 @@ In the case of Node.js this would be:
 
 Once you decrypt the data in the backend using the same encryption key used in the respective environment variable, the data object you will get will look like this:
 
-<image src="./img/sc_object.png" align="center" width="600px" height="100px" alt="screenshot object"/>
+<image src="./img/sc_object.png" align="center" width="400px" height="50px" alt="screenshot object"/>
 
 Where:
 
