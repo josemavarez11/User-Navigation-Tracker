@@ -21,7 +21,7 @@ El Rastreador de navegación de usuarios tiene una versión vanilla JavaScript y
 > [!IMPORTANT]
 > Recuerda ajustar la ruta en la etiqueta script a la ruta exacta donde has colocado tu archivo tracker.
 
-### **Para la versión mecanografiada:**
+### **Para la versión typescript:**
 
 #### **3. Incluye los archivos dentro de la carpeta ts-version en la carpeta utils de tu proyecto.**
 
