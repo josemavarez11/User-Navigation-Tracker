@@ -58,6 +58,10 @@ It is necessary to create the following environment variables in the project whe
 **TRACKER_INITIALIZATION_VECTOR**= [Initialization vector for encryption].
 
 
+> [!IMPORTANT]
+> It is important to remember that the above environment variables must be configured according to the specification of each project.
+
+
 #### Once the environment is correctly configured, the data will arrive at the endpoint encrypted as follows:
 
 
@@ -79,6 +83,12 @@ In the case of Node.js this would be:
     npm i -D user-agent-data-types
     npm i -D @types/node
 
+
+> [!TIP]
+> To make sure you add the window.navigator data types correctly in the whole project, you could add the following reference tag in the main html of the project
+
+    <reference types="user-agent-data-types" />
+    
 
 Once you decrypt the data in the backend using the same encryption key used in the respective environment variable, the data object you will get will look like this:
 
