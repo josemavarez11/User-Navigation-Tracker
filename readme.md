@@ -61,7 +61,7 @@ It is necessary to create the following environment variables in the project whe
 #### Once the environment is correctly configured, the data will arrive at the endpoint encrypted as follows:
 
 
-<image src="./img/sc_data.png" align="center" width="700px" height="290px" alt="screenshot data"/>
+<image src="./img/sc_data.png" align="center" width="700px" height="240px" alt="screenshot data"/>
 
 
 ## Backend Configuration
@@ -82,7 +82,7 @@ In the case of Node.js this would be:
 
 Once you decrypt the data in the backend using the same encryption key used in the respective environment variable, the data object you will get will look like this:
 
-<image src="./img/sc_object.png" align="center" width="400px" height="50px" alt="screenshot object"/>
+<image src="./img/sc_object.png" align="center" width="350px" height="50px" alt="screenshot object"/>
 
 Where:
 
