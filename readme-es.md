@@ -29,11 +29,31 @@ El Rastreador de navegación de usuarios tiene una versión vanilla JavaScript y
 
   Por ejemplo, la implementación del tracker en un proyecto React creado con CRA sería la siguiente:
 
-  En el archivo index.js importar el archivo tracker.js:
+  En el archivo index.js importar el archivo tracker.ts:
 
-    import './utils/tracker.ts'
+    import React from 'react';
+    import App from './App';
+    import ReactDOM from 'react-dom/client';
+    import { BrowserRouter } from 'react-router-dom';
+    import './utils/tracker.ts';
+  
+    const root = ReactDOM.createRoot(document.getElementById('root'));
+    root.render(
+      <BrowserRouter>
+        <App />
+      </BrowserRouter>
+    );
 
-  <image src="./img/sc_import.png" align="center" width="550px" height="200px" alt="screenshot import"/>
+> [!NOTE]
+> Asegúrate de instalar las depencias necesarias para los tipos de datos de user agent data y crypto-js para typescript.
+
+    npm i -D user-agent-data-types
+    npm i @types/crypto-js
+
+> [!TIP]
+> Para asegurarte de que añades correctamente los tipos de datos window.navigator en todo el proyecto, puedes añadir la siguiente etiqueta de referencia en el html principal del proyecto
+
+    <reference types="user-agent-data-types" />
 
 ## ¿Cómo utilizar el Rastreador?
 
@@ -52,29 +72,46 @@ Es necesario crear las siguientes variables de entorno en el proyecto donde se i
 
 #### Una vez configurado correctamente el entorno, los datos llegarán al endpoint cifrados de la siguiente manera:
 
-<image src="./img/sc_data.png" align="center" width="700px" height="240px" alt="screenshot data"/>
+<image src="./img/sc_data.png" align="center" width="850px" height="240px" alt="screenshot data"/>
 
 ## Configuración del backend
 
 El servidor backend debe tener configurada una ruta preparada para recibir una petición POST y desencriptar los datos recibidos. También debe estar configurado para parsear los datos a string. 
 En el caso de Node.js esto sería:
 
-    app.use(text({ type: '*/*' }))
+    app.post('/endpoint/to/receive/data', express.text({ type: '*/*' }), (req, res) => {
+        //make something with data
+        return res.sendStatus(204)
+    });
 
 > [!NOTE]
 > Asegúrese de instalar las dependencias typescript necesarias para la tipos de datos en node.js.
 
-    npm i -D user-agent-data-types
     npm i -D @types/node
 
-> [!TIP]
-> Para asegurarte de que añades correctamente los tipos de datos window.navigator en todo el proyecto, puedes añadir la siguiente etiqueta de referencia en el html principal del proyecto
 
-    <reference types="user-agent-data-types" />
+## Data Decryption
+
+Puedes implementar la siguiente función para recibir la data dentro del body del request que llega al endpoint del servidor backend:
+
+    const decryptBeaconData = (_data, _key, _iv) => {
+        try {
+            const ivD = CryptoJS.enc.Hex.stringify(CryptoJS.enc.Utf8.parse(_iv))
+            const decryptData = CryptoJS.AES.decrypt(_data, _key, { iv: ivD })
+            return decryptData.toString(CryptoJS.enc.Utf8)
+        } catch (error) {
+            console.log(error)
+            throw error.message
+        }
+    }
 
 Una vez que descifres los datos en el backend utilizando la misma clave de cifrado utilizada en la variable de entorno correspondiente, el objeto de datos que obtendrás tendrás se verá de la siguiente manera:
 
-<image src="./img/sc_object.png" align="center" width="350px" height="50px" alt="screenshot object"/>
+    {
+        visitTime: '1501',
+        url: 'https://yourwebsite/example',
+        deviceType: 'desktop'
+    }
 
 Donde:
 
