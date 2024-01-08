@@ -34,13 +34,21 @@ User Navigation Tracker has a vanilla JavaScript and TypeScript version. It is a
 
   For example, the implementation of the tracker in a React project created with CRA would be as follows:
 
-  In the index.js file import the tracker.ts file:
+  In the index.js file import the tracker.ts file. For example:
 
 
-    import './utils/tracker.ts'
-
-
-  <image src="./img/sc_import.png" align="center" width="550px" height="200px" alt="screenshot import"/>
+    import React from 'react';
+    import App from './App';
+    import ReactDOM from 'react-dom/client';
+    import { BrowserRouter } from 'react-router-dom';
+    import './utils/tracker.ts';
+  
+    const root = ReactDOM.createRoot(document.getElementById('root'));
+    root.render(
+      <BrowserRouter>
+        <App />
+      </BrowserRouter>
+    );
 
 
 > [!NOTE]
@@ -112,7 +120,11 @@ You can implement the following function to decrypt the data received in the bod
 
 Once you decrypt the data in the backend using the same encryption key used in the respective environment variable, the data object you will get will look like this:
 
-<image src="./img/sc_object.png" align="center" width="350px" height="50px" alt="screenshot object"/>
+    {
+      visitTime: '1501',
+      url: 'https://yourwebsite/example',
+      deviceType: 'desktop'
+    }
 
 Where:
 
