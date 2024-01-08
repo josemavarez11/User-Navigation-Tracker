@@ -34,7 +34,7 @@ User Navigation Tracker has a vanilla JavaScript and TypeScript version. It is a
 
   For example, the implementation of the tracker in a React project created with CRA would be as follows:
 
-  In the index.js file import the tracker.ts file. For example:
+  In the index.js file import the tracker.ts file:
 
 
     import React from 'react';
@@ -94,7 +94,10 @@ The backend server must have configured a route ready to receive a POST request 
 In the case of Node.js this would be:
 
 
-    app.use(text({ type: '*/*' }))
+    app.post('/endpoint/to/receive/data', express.text({ type: '*/*' }), (req, res) => {
+        //make something with data
+        return res.sendStatus(204)
+    });
 
 
 > [!NOTE]
