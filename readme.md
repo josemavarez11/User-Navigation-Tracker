@@ -34,11 +34,16 @@ User Navigation Tracker has a vanilla JavaScript and TypeScript version. It is a
 
   For example, the implementation of the tracker in a React project created with CRA would be as follows:
 
-  In the index.js file import the tracker.js file:
+  In the index.js file import the tracker.ts file:
 
 
     import './utils/tracker.ts'
 
+> [!NOTE]
+> Make sure to install the necessary typescript dependencies for user agent and crypto-js data types.
+
+    npm i -D user-agent-data-types
+    npm i @types/crypto-js
 
   <image src="./img/sc_import.png" align="center" width="550px" height="200px" alt="screenshot import"/>
 
@@ -78,9 +83,8 @@ In the case of Node.js this would be:
 
 
 > [!NOTE]
-> Make sure to install the necessary typescript dependencies for node.js typing.
+> Make sure to install the necessary typescript dependencies for node.js data types.
 
-    npm i -D user-agent-data-types
     npm i -D @types/node
 
 
