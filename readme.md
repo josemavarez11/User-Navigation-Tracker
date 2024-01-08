@@ -39,15 +39,22 @@ User Navigation Tracker has a vanilla JavaScript and TypeScript version. It is a
 
     import './utils/tracker.ts'
 
+
+  <image src="./img/sc_import.png" align="center" width="550px" height="200px" alt="screenshot import"/>
+
+
 > [!NOTE]
 > Make sure to install the necessary typescript dependencies for user agent and crypto-js data types.
 
     npm i -D user-agent-data-types
     npm i @types/crypto-js
+    
+    
+> [!TIP]
+> To make sure you add the window.navigator data types correctly in the whole project, you could add the following reference tag in the main html of the project
 
-  <image src="./img/sc_import.png" align="center" width="550px" height="200px" alt="screenshot import"/>
-
-
+    <reference types="user-agent-data-types" />
+    
 
 ## ¿How to Use the Tracker?
 
@@ -88,11 +95,20 @@ In the case of Node.js this would be:
     npm i -D @types/node
 
 
-> [!TIP]
-> To make sure you add the window.navigator data types correctly in the whole project, you could add the following reference tag in the main html of the project
+## Data Decryption
 
-    <reference types="user-agent-data-types" />
-    
+You can implement the following function to decrypt the data received in the body request that arrives at the backend server endpoint:
+
+    const decryptBeaconData = (_data, _key, _iv) => {
+        try {
+            const ivD = CryptoJS.enc.Hex.stringify(CryptoJS.enc.Utf8.parse(_iv))
+            const decryptData = CryptoJS.AES.decrypt(_data, _key, { iv: ivD })
+            return decryptData.toString(CryptoJS.enc.Utf8)
+        } catch (error) {
+            console.log(error)
+            throw error.message
+        }
+    }
 
 Once you decrypt the data in the backend using the same encryption key used in the respective environment variable, the data object you will get will look like this:
 
