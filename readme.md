@@ -85,7 +85,7 @@ It is necessary to create the following environment variables in the project whe
 #### Once the environment is correctly configured, the data will arrive at the endpoint encrypted as follows:
 
 
-<image src="./img/sc_data.png" align="center" width="700px" height="320px" alt="screenshot data"/>
+<image src="./img/sc_data.png" align="center" width="800px" height="280px" alt="screenshot data"/>
 
 
 ## Backend Configuration
