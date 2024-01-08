@@ -1,4 +1,4 @@
-import CryptoJS from "crypto-js";
+import CryptoJS from 'crypto-js'
 
 interface TrackData {
     visitTime: string
@@ -7,8 +7,7 @@ interface TrackData {
     os?: string
     browser?: string
 }
-const startTime = Date.now();
-const endpoint = process.env.TRACKER_ENDPOINT
+let startTime = Date.now();
 let url = window.location.href
 
 /**
@@ -29,37 +28,45 @@ const getDeviceType = () => {
     }
 }
 
-/**
- * Encrypts the given track data using AES encryption and crypto-js library.
- * It also uses an encryption key and an initialization vector sepecified in the environment variables.
- * @param {TrackData} dataToEncrypt The data to encrypt of the type TrackData.
- * @returns The encrypted data as a string.
- */
-const encryptData = (dataToEncrypt: TrackData) => {
-    const jsonString = JSON.stringify(dataToEncrypt);
-    const encryptionKey = process.env.TRACKER_ENCRYPTION_KEY
-    const initializationVector = process.env.INITIALIZATION_VECTOR
-    const encrypted = CryptoJS.AES.encrypt(jsonString, encryptionKey!, { initializationVector: CryptoJS.enc.Hex.parse(initializationVector!) });
-    const encryptedResult = encrypted.toString(CryptoJS.format.OpenSSL);
-
-    return encryptedResult
+/** 
+* Encrypts the given data using AES encryption algorithm.
+* @param {TrackData} data - The data to be encrypted.
+* @returns {string} The encrypted data as a string.
+* @throws If an error occurs during the encryption process.
+*/
+const encryptData = (data: TrackData): string => {
+    try {
+        const jsonString = JSON.stringify(data)
+        const encryptionKey = process.env.REACT_APP_TRACKER_ENCRYPTION_KEY
+        const initializationVector = process.env.REACT_APP_TRACKER_INITIALIZATION_VECTOR
+        const encrypted = CryptoJS.AES.encrypt(jsonString, encryptionKey!, { initializationVector: CryptoJS.enc.Hex.parse(initializationVector!) })
+        const encryptedResult = encrypted.toString()
+        return encryptedResult
+    } catch (error: any) {
+        console.log(error)
+        throw error.message
+    }
 }
 
 /**
  * Sends trackig data to the backend server using the sendBeacon method of the navigator object.
- * @param {string} url The url of the previous page.
+ * @param {string} url - The url of the previous page.
  */
 const sendData = (url: string) => {
+    const visitTime = Date.now() - startTime
+    
     //Represents the tracked data for a visit.
     const trackData: TrackData = {
-        visitTime: (Date.now() - startTime).toString(),
+        visitTime: visitTime.toString(),
         url,
         deviceType: getDeviceType()!,
     }
 
+    localStorage.setItem('trackData', JSON.stringify(visitTime))
     const trackDataEncrypted = encryptData(trackData)
 
-    navigator.sendBeacon(endpoint!, JSON.stringify(trackDataEncrypted))   
+    navigator.sendBeacon(process.env.REACT_APP_TRACKER_ENDPOINT!, JSON.stringify(trackDataEncrypted))  
+    startTime = Date.now() 
 }
 
 //Check if the document is hidden and execute the sendData function if it is.
