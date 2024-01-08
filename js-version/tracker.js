@@ -1,7 +1,6 @@
 import CryptoJS from "crypto-js";
 
-const initTime = Date.now();
-const endpoint = process.env.TRACKER_ENDPOINT
+let initTime = Date.now();
 let url = window.location.href
 
 /**
@@ -33,7 +32,7 @@ const encryptData = (dataToEncrypt) => {
     const encryptionKey = process.env.TRACKER_ENCRYPTION_KEY
     const initializationVector = process.env.TRACKER_INITIALIZATION_VECTOR
     const encrypted = CryptoJS.AES.encrypt(jsonString, encryptionKey, { initializationVector: CryptoJS.enc.Hex.parse(initializationVector) });
-    const encryptedResult = encrypted.toString(CryptoJS.format.OpenSSL);
+    const encryptedResult = encrypted.toString();
 
     return encryptedResult
 }
@@ -54,7 +53,9 @@ const sendData = (url) => {
 
     const trackDataEncrypted = encryptData(trackData)
 
-    navigator.sendBeacon(endpoint, JSON.stringify(trackDataEncrypted))   
+    navigator.sendBeacon(process.env.TRACKER_ENDPOINT, JSON.stringify(trackDataEncrypted))
+    
+    initTime = Date.now()
 }
 
 //Check if the document is hidden and execute the sendData function if it is.
