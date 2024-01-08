@@ -37,8 +37,8 @@ const getDeviceType = () => {
 const encryptData = (data: TrackData): string => {
     try {
         const jsonString = JSON.stringify(data)
-        const encryptionKey = process.env.REACT_APP_TRACKER_ENCRYPTION_KEY
-        const initializationVector = process.env.REACT_APP_TRACKER_INITIALIZATION_VECTOR
+        const encryptionKey = process.env.TRACKER_ENCRYPTION_KEY
+        const initializationVector = process.env.TRACKER_INITIALIZATION_VECTOR
         const encrypted = CryptoJS.AES.encrypt(jsonString, encryptionKey!, { initializationVector: CryptoJS.enc.Hex.parse(initializationVector!) })
         const encryptedResult = encrypted.toString()
         return encryptedResult
@@ -65,7 +65,7 @@ const sendData = (url: string) => {
     localStorage.setItem('trackData', JSON.stringify(visitTime))
     const trackDataEncrypted = encryptData(trackData)
 
-    navigator.sendBeacon(process.env.REACT_APP_TRACKER_ENDPOINT!, JSON.stringify(trackDataEncrypted))  
+    navigator.sendBeacon(process.env.TRACKER_ENDPOINT!, JSON.stringify(trackDataEncrypted))  
     startTime = Date.now() 
 }
 
